@@ -106,7 +106,11 @@ public class OAuth2Filter extends AuthenticatingFilter {
             }
         } catch (JWTDecodeException e) {
             resp.setStatus(HttpStatus.SC_UNAUTHORIZED);
-            resp.getWriter().print("无效的令牌");
+            resp.getWriter().print("无效的令牌!");
+            return false;
+        } catch (Exception e) {
+            resp.setStatus(HttpStatus.SC_UNAUTHORIZED);
+            resp.getWriter().print("无效的令牌!!");
             return false;
         }
         boolean bool = executeLogin(request, response);
