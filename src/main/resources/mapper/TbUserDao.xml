@@ -70,4 +70,7 @@
     JOIN tb_permission p ON JSON_CONTAINS(r.permissions, CAST(p.id AS CHAR))
     WHERE u.id = #{id} AND u.status = #{status}
   </select>
+  <select id="searchUserById" parameterType="int" resultType="com.emos.wx.db.pojo.TbUser">
+    SELECT <include refid="Base_Column_List"/> FROM tb_user WHERE id = #{userId} AND status = 1;
+  </select>
 </mapper>
