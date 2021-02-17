@@ -110,4 +110,10 @@ public class UserServiceImpl implements UserService {
         // TODO 获取消息
         return id;
     }
+
+    @Override
+    public TbUser searchUserById(int userId) {
+
+        return userDao.searchUserById(userId);
+    }
 }
