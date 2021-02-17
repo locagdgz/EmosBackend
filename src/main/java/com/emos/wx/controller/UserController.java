@@ -6,6 +6,8 @@ import com.emos.wx.controller.vo.LoginForm;
 import com.emos.wx.controller.vo.RegisterForm;
 import com.emos.wx.service.UserService;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -63,6 +65,14 @@ public class UserController {
 
         return R.ok("登陆成功").put("token", token).put("permission", permissions);
 
+    }
+
+    @PostMapping("/addUser")
+    @ApiOperation("添加用户接口")
+    @RequiresPermissions(value = {"ROOT", "USER:ADD"}, logical = Logical.OR)
+    public R addUser() {
+
+        return R.ok("用户添加成功");
     }
 
     private void saveCacheToken(String token, int userId) {
