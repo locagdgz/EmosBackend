@@ -1,6 +1,8 @@
 package com.emos.wx.db.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 
 /**
@@ -15,24 +17,54 @@ public class TbCheckin implements Serializable {
     private Integer id;
 
     /**
-     * 参数名
+     * 用户ID
      */
-    private String paramKey;
+    private Integer userId;
 
     /**
-     * 参数值
+     * 签到地址
      */
-    private String paramValue;
+    private String address;
 
     /**
-     * 状态
+     * 国家
      */
-    private Boolean status;
+    private String country;
 
     /**
-     * 备注
+     * 省份
      */
-    private String remark;
+    private String province;
+
+    /**
+     * 城市
+     */
+    private String city;
+
+    /**
+     * 区划
+     */
+    private String district;
+
+    /**
+     * 考勤结果
+     */
+    private Byte status;
+
+    /**
+     * 风险等级
+     */
+    private Integer risk;
+
+    /**
+     * 签到日期
+     */
+    private Date date;
+
+    /**
+     * 签到时间
+     */
+    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 }
