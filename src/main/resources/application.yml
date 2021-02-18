@@ -44,6 +44,11 @@ spring:
       authentication-database: admin
       username: admin
       password: abc123456
+  mail:
+    default-encoding: UTF-8
+    host: SMTP服务器地址
+    username: 邮箱账号
+    password: 邮箱密码
 
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
@@ -64,12 +69,19 @@ emos:
     #密钥
     secret: abc123456
     #令牌过期时间（天）
-    expire:  5
+    expire: 5
     #令牌缓存时间（天数）
     cache-expire: 10
+  face:
+    createFaceModelUrl: http://192.168.31.102/create_face_model
+    checkinUrl: http://192.168.31.102/checkin
+  email:
+    system: 邮箱地址
+    hr: 邮箱地址
+  image-folder: D:/emos/image
 
 wx:
-  app-id:
-  app-secret:
+  app-id: appid
+  app-secret: appsecret
   open-id-url: https://api.weixin.qq.com/sns/jscode2session
   grant-type: authorization_code
