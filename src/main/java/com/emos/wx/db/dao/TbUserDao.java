@@ -3,6 +3,7 @@ package com.emos.wx.db.dao;
 import com.emos.wx.db.pojo.TbUser;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.HashMap;
 import java.util.Set;
 
 @Mapper
@@ -18,4 +19,5 @@ public interface TbUserDao {
 
     TbUser searchUserById(int userId);
 
+    HashMap<String, String> searchNameAndDept(int userId);
 }
