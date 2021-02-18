@@ -10,29 +10,19 @@ import lombok.Data;
 @Data
 public class TbFaceModel implements Serializable {
     /**
-     * 主键
+     * 主键值
      */
     private Integer id;
 
     /**
-     * 参数名
+     * 用户ID
      */
-    private String paramKey;
+    private Integer userId;
 
     /**
-     * 参数值
+     * 用户人脸模型
      */
-    private String paramValue;
-
-    /**
-     * 状态
-     */
-    private Boolean status;
-
-    /**
-     * 备注
-     */
-    private String remark;
+    private String faceModel;
 
     private static final long serialVersionUID = 1L;
 }
